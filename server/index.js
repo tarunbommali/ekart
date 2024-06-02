@@ -11,7 +11,7 @@ const cors = require('cors');
 // Middleware
 app.use(cors(
   {
-    origin :[ "https://deploy-link.vercel.app"], 
+    origin :[ "https://ekart-client.vercel.app"], 
     methods:[ "POST", "GET", "PUT", "DELETE" ], 
     credentials: true 
   }
