@@ -1,7 +1,7 @@
 // src/productService.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/';
+const API_URL = 'https://ekart-five-mauve.vercel.app/';
 
 export const getProducts = async () => {
   return await axios.get(API_URL);
