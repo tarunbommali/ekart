@@ -10,7 +10,7 @@ const cors = require('cors');
 
 // Middleware
 app.use(cors({
-  origin: ['https://localhost:3000'],
+  origin: ['https://ekart-client.vercel.app'],
   methods: ['POST', 'GET', 'PUT', 'DELETE'],
   credentials: true
 }));
