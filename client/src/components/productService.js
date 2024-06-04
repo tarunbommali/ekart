@@ -1,24 +1,27 @@
-// src/productService.js
+// productService.js
+
 import axios from 'axios';
 
-const API_URL = 'https://ekart-five-mauve.vercel.app/';
+const API_URL = 'http://localhost:5000'; 
 
 export const getProducts = async () => {
-  return await axios.get(API_URL);
+  const response = await axios.get(API_URL);
+  return response.data;
 };
 
-export const getProduct = async (id) => {
-  return await axios.get(`${API_URL}/${id}`);
+export const createProduct = async (product) => {
+  const response = await axios.post(API_URL, product);
+  return response.data;
 };
 
-export const createProduct = async (productData) => {
-  return await axios.post(API_URL, productData);
-};
-
-export const updateProduct = async (id, productData) => {
-  return await axios.put(`${API_URL}/${id}`, productData);
+export const updateProduct = async (id, product) => {
+  const response = await axios.put(`${API_URL}/${id}`, product);
+  return response.data;
 };
 
 export const deleteProduct = async (id) => {
-  return await axios.delete(`${API_URL}/${id}`);
+  
+  const response = await axios.delete(`${API_URL}/${id}`);
+  console.log(response.data, "DAta")
+  return response.data;
 };

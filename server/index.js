@@ -9,18 +9,12 @@ const cors = require('cors');
 
 
 // Middleware
-<<<<<<< HEAD
+app.use(cors({
+  origin: ['https://localhost:3000'],
+  methods: ['POST', 'GET', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
-app.use(cors());
-=======
-app.use(cors(
-  {
-    origin :[ "https://ekart-client.vercel.app"], 
-    methods:[ "POST", "GET", "PUT", "DELETE" ], 
-    credentials: true 
-  }
-  ));
->>>>>>> 67cc22ab2d1933ad9fc54f95788f360776aae257
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,7 +29,7 @@ mongoose
   .then(() => {
     console.log("Connected to database!");
     app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+      console.log(`Server is running on port http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
