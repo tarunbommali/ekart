@@ -6,15 +6,15 @@ const productRoute = require("./routes/product.route.js");
 const app = express();
 const cors = require('cors'); 
 
-
-
-// Middleware
-app.use(cors({
+const corsConfig = {
   origin: ['https://ekart-client.vercel.app'],
   methods: ['POST', 'GET', 'PUT', 'DELETE'],
   credentials: true
-}));
+}
 
+// Middleware
+app.use(cors(corsConfig));
+app.options("", corsConfig);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
